@@ -1,14 +1,8 @@
 import React from 'react';
-
+import Messages from './client/components/Messages.js'
 import App from './client/components/App.react';
 
-const Foo = ({ props }) => (
-  <div>foo</div>
-);
 
-const Messages = ({ props }) => (
-  <div>Messages</div>
-);
 
 const SingleMessage = ({ props }) => (
   <div>Message</div>
@@ -22,19 +16,15 @@ export default [
     children: [
       {
         path: '',
-        getComponent: () => <div>Main</div>,
-      },
-      {
-        path: 'foo',
-        getComponent: Foo,
+        Component: () => <div>Main</div>,
       },
       {
         path: 'messages',
-        getComponent: Messages,
+        Component: Messages,
       },
       {
         path: 'messages/:id',
-        getComponent: SingleMessage,
+        Component: SingleMessage,
       },
     ],
 

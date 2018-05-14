@@ -4,16 +4,12 @@ import Messages from './Messages.js';
 import Message from './SingleMessage.js';
 
 function App(props) {
-  debugger;
   return (
     <div>
       <h1>SVZ</h1>
       <ul>
         <LinkItem to="/">
           Main
-        </LinkItem>
-        <LinkItem to="/foo">
-          foo
         </LinkItem>
         <LinkItem to="/messages">
           messages

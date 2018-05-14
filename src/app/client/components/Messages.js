@@ -37,12 +37,19 @@ function Messages(props) {
   return (
     <div>
       <h1>Messages</h1>
-      <ul>
+      
         {messages.map(message => {
-          return (<li key={message.id}>{message.text}</li>);
+          return (
+          <span key={message.id}>
+          <h4>Date: {message.created_at}</h4>
+          <h3>Text: {message.text}</h3>
+          <LinkItem to="/messages/${message.id}`">
+             Click to view this message
+          </LinkItem>
+          </span>);
         })}
-      </ul>
-      {data}
+     
+      {/* {data} */}
     </div>
   );
 }
