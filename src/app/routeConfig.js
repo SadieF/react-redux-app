@@ -1,13 +1,7 @@
 import React from 'react';
+import SingleMessage from './client/components/SingleMessage.js'
 import Messages from './client/components/Messages.js'
 import App from './client/components/App.react';
-
-
-
-const SingleMessage = ({ props }) => (
-  <div>Message</div>
-);
-
 
 export default [
   {

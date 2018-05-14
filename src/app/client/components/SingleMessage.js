@@ -1,10 +1,11 @@
 import React from 'react';
 import LinkItem from './LinkItem.react';
+import {connect} from 'react-redux';
 
-function SingleMessage(props) {
+function SingleMessagePresenter(props) {
   return (
     <div>
-      <h1>Message</h1>
+      <h1>{props.params.id}</h1>
       <ul>
         <LinkItem to="/messages/:id">
           Message
@@ -14,5 +15,12 @@ function SingleMessage(props) {
     </div>
   );
 }
+function mapStatetoProps(state, props) {
+  return {
+      messages: state.messages.messages.find(message => message.id.toString() === props.params.id)
+  }
+}
+
+const SingleMessage = connect(mapStatetoProps)(SingleMessagePresenter)
 
 export default SingleMessage;
