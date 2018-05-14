@@ -6,18 +6,37 @@ const Foo = ({ props }) => (
   <div>foo</div>
 );
 
+const Messages = ({ props }) => (
+  <div>Messages</div>
+);
+
+const SingleMessage = ({ props }) => (
+  <div>Message</div>
+);
+
+
 export default [
   {
     path: '/',
     Component: App,
     children: [
       {
-        Component: () => <div>Main</div>,
+        path: '',
+        getComponent: () => <div>Main</div>,
       },
       {
         path: 'foo',
         getComponent: Foo,
       },
+      {
+        path: 'messages',
+        getComponent: Messages,
+      },
+      {
+        path: 'messages/:id',
+        getComponent: SingleMessage,
+      },
     ],
+
   },
 ];

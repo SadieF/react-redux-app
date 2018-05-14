@@ -21,6 +21,8 @@ import logger from 'redux-logger';
 
 import routeConfig from '../routeConfig';
 
+
+
 const store = createStore(
   combineReducers({
     found: foundReducer,
